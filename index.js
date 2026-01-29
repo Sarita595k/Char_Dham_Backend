@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", router)
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     connectToDb()
     console.log("Server is running")
 })
