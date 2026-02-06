@@ -1,5 +1,6 @@
 import Details from "../models/detailsModel.js"
 
+// created function for getting user data 
 export const getDetailsFromUser = async (req, res) => {
     try {
         const { username, email, phoneNumber, placesToVisit, numberOfAdults, numberOfChildren } = req.body
