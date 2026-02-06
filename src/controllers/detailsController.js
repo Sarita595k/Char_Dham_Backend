@@ -16,6 +16,7 @@ export const getDetailsFromUser = async (req, res) => {
         const details = await Details.create({ username, email, phoneNumber, placesToVisit, numberOfAdults, numberOfChildren })
 
 
+        // check the status 
         res.status(201).json({
             success: true,
             // message: "Data Submitted Successfully",
