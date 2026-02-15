@@ -8,12 +8,20 @@ dotenv.config()
 const app = express()
 //connect backend to frontend
 
-const allowedOrigins = ['https://yugenindiatravel.com'];
+const allowedOrigins = [
+    'https://yugenindiatravel.com',
+    'http://localhost:5173'
+];
 
 app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // if you are using cookies or auth
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
 }));
 
 app.use(express.json())
