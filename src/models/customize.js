@@ -22,4 +22,4 @@ const customizeSchema = new Schema({
     })
 
 const Customize = mongoose.model("Customize", customizeSchema)
-export default Details
+export default Customize
