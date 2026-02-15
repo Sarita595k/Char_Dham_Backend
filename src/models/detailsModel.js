@@ -17,17 +17,14 @@ const detailsSchema = new Schema({
         match: [/^[6-9]\d{9}$/, 'Please provide a valid 10-digit Indian phone number']
     },
     placesToVisit: {
-        type: String,
-        required: true
+        type: String
     },
     numberOfAdults: {
         type: Number,
-        required: true,
         min: [1, 'At least one adult is required']
 
     }, numberOfChildren: {
-        type: Number,
-        required: true
+        type: Number
     }
 }
     , {
